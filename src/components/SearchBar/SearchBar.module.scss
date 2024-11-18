@@ -1,0 +1,39 @@
+.form {
+  gap: 17px;
+  width: 527px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+
+  &__bar {
+    width: 527px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    background: rgb(238, 238, 238);
+    outline: none;
+    padding-left: 97px;
+
+    &:focus {
+      outline: 2px rgba(68, 222, 111, 0.94) solid;
+    }
+  }
+
+  &__button {
+    left: 2px;
+    width: 91.17px;
+    height: 34.29px;
+    position: absolute;
+    border-radius: 10px;
+    background: rgba(68, 222, 111, 0.94);
+    border: none;
+    cursor: pointer;
+    font-family: "Jua";
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(0, 117, 33);
+  }
+}

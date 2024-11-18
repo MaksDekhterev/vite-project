@@ -1,0 +1,21 @@
+.logo {
+  font-size: 35px;
+  font-family: "Jua";
+}
+
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+&__name{
+    font-size: 24px;
+font-family: "Jua";
+}
+
+  &__man {
+    height: 90px;
+    width: 90px;
+  }
+}
