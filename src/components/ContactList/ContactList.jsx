@@ -1,12 +1,13 @@
+import { ContactDetails } from '../ContactDetails/ContactDetails';
 import s from './ContactList.module.scss'
 
 export const ContactList = () => {
   return (
-    <div>
+    <div className={s.container}>
       <ul className={s.contact}>
         <li className={s.contact__list}>
-          <img src="" alt="аватарка контакта" className={s.contact__avatar} />
-          <div className={s.contact__info}>
+          <img src="images/man.png" alt="аватарка контакта" className={s.contact__avatar} />
+          <div>
             <p className={s.contact__name}>Curt Cobain</p>
             <p className={s.contact__status}>Best friend</p>
           </div>
@@ -18,6 +19,7 @@ export const ContactList = () => {
           </a>
         </li>
       </ul>
+      <ContactDetails/>
     </div>
   );
 };

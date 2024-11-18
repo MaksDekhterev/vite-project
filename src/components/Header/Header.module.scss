@@ -1,4 +1,17 @@
-.search{
+.search {
+  padding: 50px 40px;
+  display: flex;
+  gap: 36px;
+  border-bottom: solid 3px #9a9a9a18;
+
+  &__wrapper {
     display: flex;
-    
+    gap: 18px;
+  }
+}
+
+.title {
+  font-family: "Jua";
+  font-size: 24px;
+  font-weight: 400;
 }

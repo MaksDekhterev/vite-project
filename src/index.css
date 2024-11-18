@@ -1,6 +1,28 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Inter";
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+}
+
+.container__right {
+  width: 100%;
+}
+
+.main__button {
+  width: 100%;
+  padding: 8px;
+  border-radius: 10px;
+  background: rgba(68, 222, 111, 0.94);
+  border: none;
+  cursor: pointer;
+  font-family: "Jua";
+  font-size: 15px;
+  font-weight: 500;
+  color: rgb(0, 117, 33);
 }

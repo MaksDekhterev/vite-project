@@ -1,0 +1,14 @@
+.container{
+    display: flex;
+}
+
+.contact{
+    padding: 10px 20px;
+    width: 100%;
+    max-width: 715px;
+    &__list{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
