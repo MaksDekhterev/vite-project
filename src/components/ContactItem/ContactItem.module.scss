@@ -1,5 +1,25 @@
-.contact__list {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.contact {
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid #9a9a9a18;
+    padding: 0 8px;
+    border-radius: 10px;
+  }
+  &__text{
+    width: 160px;
+  }
+
+  &__description{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+  }
+  &__avatar{
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+  }
 }

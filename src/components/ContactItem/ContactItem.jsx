@@ -1,25 +1,35 @@
-import s from "./ContactItem.module.scss"
+import s from "./ContactItem.module.scss";
 
-export const ContactItem = () => {
+export const ContactItem = ({ obj, selected, setSelected }) => {
+  const { id, name, surname, about, gender, mail, phone } = obj;
   return (
-    <div>
-      <li className={s.contact__list}>
+    <li
+      className={s.contact__list}
+      style={selected === id ? { border: "2px solid lightgreen" } : {}}
+      onClick={() => {
+        setSelected(id);
+        console.log(selected);
+      }}
+    >
+      <div className={s.contact__description}>
         <img
-          src="images/man.png"
+          src={gender === "male" ? "images/man.png" : "images/women.png"}
           alt="аватарка контакта"
           className={s.contact__avatar}
         />
-        <div>
-          <p className={s.contact__name}>Curt Cobain</p>
-          <p className={s.contact__status}>Best friend</p>
+        <div className={s.contact__text}>
+          <p className={s.contact__name}>{name}</p>
+          <p className={s.contact__name}>{surname}</p>
+          <p className={s.contact__status}>{about}</p>
         </div>
-        <a href="tel:+71234567890" className={s.contact__tel}>
-          8 (123) 456-78-90
+        <a href={"tel:" + phone} className={s.contact__tel}>
+          {phone}
         </a>
-        <a href="mailto:" className={s.contact__mail}>
-          kurtcobain@gmail.com
-        </a>
-      </li>
-    </div>
+      </div>
+
+      <a href={"mailto:" + mail} className={s.contact__mail}>
+        {mail}
+      </a>
+    </li>
   );
-}
+};
