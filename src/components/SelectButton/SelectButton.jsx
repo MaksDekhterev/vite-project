@@ -15,10 +15,6 @@ export const SelectButton = () => {
         <option value="newest">Newest</option>
         <option value="oldest">Oldest</option>
       </select>
-      <button type="button" className={s.button}>
-        <img src="images/searchBar/plus.svg" alt="+" />
-        New contact
-      </button>
     </div>
   );
 };

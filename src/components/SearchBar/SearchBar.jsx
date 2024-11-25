@@ -1,13 +1,10 @@
-import s from "./SearchBar.module.scss";
+import { Input } from "../ui/Input/Input";
 
 export const SearchBar = () => {
   return (
     <div>
-      <form className={s.form}>
-        <div className={s.form__button}>
-          <button className="main__button">Search</button>
-        </div>
-        <input name="search" type="text" className={s.form__bar} />
+      <form>
+        <Input button={true} buttonName="Search" type='text'/>
       </form>
     </div>
   );

@@ -3,10 +3,12 @@
   display: flex;
   gap: 36px;
   border-bottom: solid 3px #9a9a9a18;
+  max-height: 20vh;
 
   &__wrapper {
     display: flex;
     gap: 18px;
+    height: 40px;
   }
 }
 
