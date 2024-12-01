@@ -1,7 +1,9 @@
 import { ContactList } from "./components/ContactList/ContactList";
 import { LeftAside } from "./components/LeftAside/LeftAside";
 import { Header } from "./components/Header/Header";
-
+import { Modal } from "./components/Modal/Modal";
+import { useState } from "react";
+import { ContactForm } from "./components/ContactForm/ContactForm";
 
 const contacts = [
   {
@@ -12,7 +14,7 @@ const contacts = [
     gender: "male",
     mail: "kurtcobain@gmail.com",
     phone: "0706312495",
-    creationDate: "2024-06-09T12:34:56.789Z"
+    creationDate: "2024-06-09T12:34:56.789Z",
   },
   {
     id: 2,
@@ -22,7 +24,7 @@ const contacts = [
     gender: "female",
     mail: "janisjoplin@gmail.com",
     phone: "0902362954",
-    creationDate: "2024-06-09T12:34:56.789Z"
+    creationDate: "2024-06-09T12:34:56.789Z",
   },
   {
     id: 3,
@@ -32,7 +34,7 @@ const contacts = [
     gender: "male",
     mail: "jimihendrix@gmail.com",
     phone: "0902362951",
-    creationDate: "2024-06-09T12:34:56.789Z"
+    creationDate: "2024-06-09T12:34:56.789Z",
   },
   {
     id: 4,
@@ -42,7 +44,7 @@ const contacts = [
     gender: "male",
     mail: "freddiemercury@gmail.com",
     phone: "0902362952",
-    creationDate: "2024-06-09T12:34:56.789Z"
+    creationDate: "2024-06-09T12:34:56.789Z",
   },
   {
     id: 5,
@@ -52,7 +54,7 @@ const contacts = [
     gender: "male",
     mail: "robertplant@gmail.com",
     phone: "0902362953",
-    creationDate: "2024-06-09T12:34:56.789Z"
+    creationDate: "2024-06-09T12:34:56.789Z",
   },
   {
     id: 6,
@@ -62,7 +64,7 @@ const contacts = [
     gender: "male",
     mail: "davidbowie@gmail.com",
     phone: "0902362955",
-    creationDate: "2024-06-09T12:34:56.789Z"
+    creationDate: "2024-06-09T12:34:56.789Z",
   },
   {
     id: 7,
@@ -72,7 +74,7 @@ const contacts = [
     gender: "male",
     mail: "mickjagger@gmail.com",
     phone: "0902362956",
-    creationDate: "2024-06-09T12:34:56.789Z"
+    creationDate: "2024-06-09T12:34:56.789Z",
   },
   {
     id: 8,
@@ -82,7 +84,7 @@ const contacts = [
     gender: "male",
     mail: "brucespringsteen@gmail.com",
     phone: "0902362957",
-    creationDate: "2024-06-09T12:34:56.789Z"
+    creationDate: "2024-06-09T12:34:56.789Z",
   },
   {
     id: 9,
@@ -92,7 +94,7 @@ const contacts = [
     gender: "male",
     mail: "elvispresley@gmail.com",
     phone: "0902362958",
-    creationDate: "2024-06-09T12:34:56.789Z"
+    creationDate: "2024-06-09T12:34:56.789Z",
   },
   {
     id: 10,
@@ -102,7 +104,7 @@ const contacts = [
     gender: "male",
     mail: "steventyler@gmail.com",
     phone: "0902362959",
-    creationDate: "2024-06-09T12:34:56.789Z"
+    creationDate: "2024-06-09T12:34:56.789Z",
   },
   {
     id: 11,
@@ -112,7 +114,7 @@ const contacts = [
     gender: "male",
     mail: "axlrose@gmail.com",
     phone: "0902362960",
-    creationDate: "2024-06-09T12:34:56.789Z"
+    creationDate: "2024-06-09T12:34:56.789Z",
   },
   {
     id: 12,
@@ -122,7 +124,7 @@ const contacts = [
     gender: "male",
     mail: "ozzyosbourne@gmail.com",
     phone: "0902362961",
-    creationDate: "2024-06-09T12:34:56.789Z"
+    creationDate: "2024-06-09T12:34:56.789Z",
   },
   {
     id: 13,
@@ -132,7 +134,7 @@ const contacts = [
     gender: "male",
     mail: "jimmorrison@gmail.com",
     phone: "0902362962",
-    creationDate: "2024-06-09T12:34:56.789Z"
+    creationDate: "2024-06-09T12:34:56.789Z",
   },
   {
     id: 14,
@@ -142,7 +144,7 @@ const contacts = [
     gender: "male",
     mail: "eddievedder@gmail.com",
     phone: "0902362963",
-    creationDate: "2024-06-09T12:34:56.789Z"
+    creationDate: "2024-06-09T12:34:56.789Z",
   },
   {
     id: 15,
@@ -152,7 +154,7 @@ const contacts = [
     gender: "male",
     mail: "brianjohnson@gmail.com",
     phone: "0902362964",
-    creationDate: "2024-06-09T12:34:56.789Z"
+    creationDate: "2024-06-09T12:34:56.789Z",
   },
   {
     id: 16,
@@ -162,7 +164,7 @@ const contacts = [
     gender: "male",
     mail: "jonbonjovi@gmail.com",
     phone: "0902362965",
-    creationDate: "2024-06-09T12:34:56.789Z"
+    creationDate: "2024-06-09T12:34:56.789Z",
   },
   {
     id: 17,
@@ -172,7 +174,7 @@ const contacts = [
     gender: "male",
     mail: "chriscornell@gmail.com",
     phone: "0902362966",
-    creationDate: "2024-06-09T12:34:56.789Z"
+    creationDate: "2024-06-09T12:34:56.789Z",
   },
   {
     id: 18,
@@ -182,7 +184,7 @@ const contacts = [
     gender: "female",
     mail: "tinaweymouth@gmail.com",
     phone: "0902362968",
-    creationDate: "2024-06-09T12:34:56.789Z"
+    creationDate: "2024-06-09T12:34:56.789Z",
   },
   {
     id: 19,
@@ -190,9 +192,9 @@ const contacts = [
     surname: "Ronstadt",
     about: "Rock Legend",
     gender: "female",
-mail: "lindaronstadt@gmail.com",
+    mail: "lindaronstadt@gmail.com",
     phone: "0902362969",
-    creationDate: "2024-06-09T12:34:56.789Z"
+    creationDate: "2024-06-09T12:34:56.789Z",
   },
   {
     id: 20,
@@ -202,19 +204,24 @@ mail: "lindaronstadt@gmail.com",
     gender: "female",
     mail: "annielennox@gmail.com",
     phone: "0902362970",
-    creationDate: "2024-06-09T12:34:56.789Z"
+    creationDate: "2024-06-09T12:34:56.789Z",
   },
 ];
 
 function App() {
+  const [modal, setModal] = useState(false);
+
   return (
-    <div className="container">
-      <LeftAside />
-      <div className="container__right">
-        <Header />
-        <ContactList contacts={contacts}/>
+    <>
+      <div className="container">
+        <LeftAside />
+        <div className="container__right">
+          <Header setModal={setModal} />
+          <ContactList contacts={contacts} />
+        </div>
       </div>
-    </div>
+      {modal && <Modal onClose={()=>setModal("")}><ContactForm/></Modal>}
+    </>
   );
 }
 

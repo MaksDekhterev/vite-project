@@ -3,6 +3,7 @@ import s from "./Input.module.scss";
 
 export const Input = ({
   button = false,
+  register,
   forInput = "",
   buttonName,
   ...inputProps
@@ -14,8 +15,12 @@ export const Input = ({
           {buttonName}
         </GreenButton>
       </div>
-
-      <input {...inputProps} className={s.form__bar} />
+      <input
+        id={forInput}
+        {...(register && { ...register(forInput) })}
+        {...inputProps}
+        className={s.form__bar}
+      />
     </div>
   );
 };
