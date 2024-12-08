@@ -1,19 +1,18 @@
 import s from "./ContactItem.module.scss";
 
 export const ContactItem = ({ obj, selected, setSelected }) => {
-  const { id, name, surname, about, gender, mail, phone } = obj;
+  const { id, name, surname, about, gender, mail, phone, image } = obj;
   return (
     <li
       className={s.contact__list}
       style={selected === id ? { border: "2px solid lightgreen" } : {}}
       onClick={() => {
         setSelected(id);
-        console.log(selected);
       }}
     >
       <div className={s.contact__description}>
         <img
-          src={gender === "male" ? "images/man.png" : "images/women.png"}
+          src={image ? import.meta.env.VITE_BASE_URL + image : gender === "male" ? "images/man.png" : "images/women.png"}
           alt="аватарка контакта"
           className={s.contact__avatar}
         />

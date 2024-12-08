@@ -5,14 +5,43 @@
   border-radius: 15px;
 }
 
-.title{
-    font-size: 24px;
-    font-family: "Jua";
-    text-align: center;
+.title {
+  font-size: 24px;
+  font-family: "Jua";
+  text-align: center;
 }
 
-.form{
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  &__bottom{
     display: flex;
-    flex-direction: column;
-    gap: 22px;
+    justify-content: space-between;
+  }
+  &__button{
+    display: flex;
+    gap: 62px;
+    width: 367px;
+  }
+  &__image{
+    display: flex;
+    gap: 70px;
+    align-items: end;
+  }
+}
+
+.avatar{
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  background-color: #d6d6d6;
+  border-radius: 9px;
+}
+
+.error {
+  margin-top: 5px;
+  color: red;
+  font-size: 12px;
+  font-weight: 600;
 }

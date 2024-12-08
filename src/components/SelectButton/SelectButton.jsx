@@ -1,20 +1,28 @@
-import s from './SelectButton.module.scss'
+import { Select } from "../ui/Select/Select";
+import s from "./SelectButton.module.scss";
 
-export const SelectButton = () => {
+export const SelectButton = ({ setGender, setSort }) => {
   return (
     <div className={s.filters}>
-      <select name="gender" className={s.gender}>
-        <option value="">Gender</option>
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-      </select>
-      <select name="sort" className={s.sort}>
-        <option value="">Sort</option>
-        <option value="az">A-Z</option>
-        <option value="za">Z-A</option>
-        <option value="newest">Newest</option>
-        <option value="oldest">Oldest</option>
-      </select>
+      <Select
+        onChange={(evt) => setGender(evt.target.value)}
+        name="gender"
+        options={[
+          { value: "", text: "Gender" },
+          { value: "male", text: "Male" },
+          { value: "female", text: "Female" },
+        ]}
+      />
+      <Select
+        onChange={(evt) => setSort(evt.target.value)}
+        name="sort"
+        options={[
+          { value: "date", text: "Sort" },
+          { value: "a-z", text: "A-Z" },
+          { value: "z", text: "Z-A" },
+          { value: "", text: "Oldest" },
+        ]}
+      />
     </div>
   );
 };
